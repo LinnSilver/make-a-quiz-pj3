@@ -1,4 +1,3 @@
-import json
 
 def run():
     # Opening JSON file
@@ -14,6 +13,7 @@ def run():
         print("Failed to read data from JSON")
         data = []
 
+    import json
     answer = None
 
     while answer not in ("c", "p"):
