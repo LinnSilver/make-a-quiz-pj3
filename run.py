@@ -22,10 +22,15 @@ def run():
         answer = input("Please choose:\n")
 
         if answer == "c":
+            print("ask for quiz name")
+            quiz_name = ask_for_name()
+
             print("ask_for_question")
             question = ask_for_question()
             answer_for_question = ask_for_answers()
-            quiz_object = {"question": question, "answers_for_question": answer_for_question}
+            quiz_object = {"quiz_name":  quiz_name, 
+                            "question": question, 
+                            "answer_for_question": answer_for_question}
             print(str(quiz_object))
             f = open('data.json', 'w')
             data.append(quiz_object)
@@ -35,6 +40,16 @@ def run():
             print("Play")
         else:
             print("Please enter c or p.")
+
+def ask_for_name():
+    """ Ask user for quiz nane """
+    while True:
+        print("Please enter quiz name\n")
+        data_name = input("Name for quiz:")
+
+        quiz_name = data_name
+
+        return quiz_name
 
 def ask_for_question():
     """ Ask user for question """
