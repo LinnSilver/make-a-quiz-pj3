@@ -1,5 +1,6 @@
 
 def run():
+    """ Manage JSON file """
     # Opening JSON file
     f = open('data.json', 'r')
 
@@ -24,22 +25,22 @@ def run():
         if answer == "c":
             print("ask for quiz name")
             quiz_name = ask_for_name()
-
             print("ask_for_question")
             question = ask_for_question()
             answer_for_question = ask_for_answers()
-            quiz_object = {"quiz_name":  quiz_name, 
-                            "question": question, 
-                            "answer_for_question": answer_for_question}
+            quiz_object = {"quiz_name":  quiz_name,
+                           "question": question,
+                           "answer_for_question": answer_for_question}
             print(str(quiz_object))
             f = open('data.json', 'w')
             data.append(quiz_object)
-            json.dump(data , f)
+            json.dump(data, f)
             f.close()
         elif answer == "p":
             print("Play")
         else:
             print("Please enter c or p.")
+
 
 def ask_for_name():
     """ Ask user for quiz nane """
@@ -51,6 +52,7 @@ def ask_for_name():
 
         return quiz_name
 
+
 def ask_for_question():
     """ Ask user for question """
     while True:
@@ -61,7 +63,9 @@ def ask_for_question():
 
         return question
 
+
 def ask_for_answers():
+    """ Ask user for answers """
     number_of_answers = int(input("How many answers do you want to add?:"))
 
     i = 0
@@ -76,8 +80,10 @@ def ask_for_answers():
     corect_answer_index = answer_list.index(corect_answer)
     if corect_answer_index >= 0:
         del answer_list[corect_answer_index]
-        return {"answer":answer_list, "corect_answer": corect_answer}
+        return {"answer": answer_list, "corect_answer": corect_answer}
 
 
 if __name__ == '__main__':
+
     run()
+
