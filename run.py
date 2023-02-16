@@ -15,17 +15,18 @@ def run():
         data = []
 
     import json
+
     answer = None
 
     while answer not in ("c", "p"):
         print("c= Create a quiz?")
         print("p= Play a quiz?")
-        answer = input("Please choose:\n")
+        answer = input("Please choose c or p:\n")
 
         if answer == "c":
-            print("ask for quiz name")
+            #print("ask for quiz name")
             quiz_name = ask_for_name()
-            print("ask_for_question")
+            #print("ask_for_question")
             question = ask_for_question()
             answer_for_question = ask_for_answers()
             quiz_object = {"quiz_name":  quiz_name,
@@ -67,19 +68,19 @@ def ask_for_question():
 def ask_for_answers():
     """ Ask user for answers """
     number_of_answers = int(input("How many answers do you want to add?:"))
-
-    i = 0
     answer_list = []
-    while i < number_of_answers:
-        print("Please enter answer\n")
-        data_answer = input("Answer:")
+    #i = 0
+    
+    for i in range(number_of_answers):
+        data_answer = input("Please enter answer:\n")
         answer_list.append(data_answer)
-        i += 1
-    print("Wath is corect answer?")
-    corect_answer = input()
-    corect_answer_index = answer_list.index(corect_answer)
-    if corect_answer_index >= 0:
-        del answer_list[corect_answer_index]
+
+    while True:
+        corect_answer = input("Wath is corect answer:?\n")
+   
+        if corect_answer not in answer_list:
+            print("Please enter one of the ansers you provided.")
+       
         return {"answer": answer_list, "corect_answer": corect_answer}
 
 
