@@ -34,17 +34,28 @@ def run_menu():
             print("Please enter c or p.")
 
 def create_quiz():
-    """ Ask user for quiz nane """
-    while True:
-        print("Please enter quiz name\n")
-        data_name = input("Name for quiz:")
+    """ Ask user for quiz name """
 
-        quiz_name = data_name
+    quiz_questions = []
 
-        return quiz_name
+    quiz_name = input("Please enter quiz name: ")
+
+    quiz_name.strip()
+
+    if len(quiz_name) < 2:
+        print("Please enter a name that is at least 2 characters long.\n")
+        create_quiz()
+
+    print(quiz_name)
+
+    question_status = True
+    while question_status == True:
+
+        quiz_question_name = create_quiz_question()
+        answers = create_quiz_question_answers()
 
 
-def ask_for_question():
+def create_quiz_question():
     """ Ask user for question """
     while True:
         print("Please enter question\n")
@@ -55,7 +66,7 @@ def ask_for_question():
         return question
 
 
-def ask_for_answers():
+def create_quiz_question_answers():
     """ Ask user for answers """
     number_of_answers = int(input("How many answers do you want to add?:"))
     answer_list = []
