@@ -1,21 +1,24 @@
+import json
+global data
 
-def run():
+
+def storage_get():
     """ Manage JSON file """
     # Opening JSON file
-    f = open('data.json', 'r')
+    storage_json = open('data.json', 'r')
 
     # Load JSON data to memory
     try:
-        data = json.load(f)
+        data = json.load(storage_json)
         if type(data) is not list:
             data = []
-        f.close()
+        storage_json.close()
     except:
         print("Failed to read data from JSON")
         data = []
 
-    import json
 
+def run_menu():
     answer = None
 
     while answer not in ("c", "p"):
@@ -85,6 +88,6 @@ def ask_for_answers():
 
 
 if __name__ == '__main__':
-
-    run()
+    storage_get()
+    run_menu()
 
