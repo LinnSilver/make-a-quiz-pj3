@@ -27,26 +27,13 @@ def run_menu():
         answer = input("Please choose c or p:\n")
 
         if answer == "c":
-            #print("ask for quiz name")
-            quiz_name = ask_for_name()
-            #print("ask_for_question")
-            question = ask_for_question()
-            answer_for_question = ask_for_answers()
-            quiz_object = {"quiz_name":  quiz_name,
-                           "question": question,
-                           "answer_for_question": answer_for_question}
-            print(str(quiz_object))
-            f = open('data.json', 'w')
-            data.append(quiz_object)
-            json.dump(data, f)
-            f.close()
+            create_quiz()
         elif answer == "p":
-            print("Play")
+            print("Play a quiz")
         else:
             print("Please enter c or p.")
 
-
-def ask_for_name():
+def create_quiz():
     """ Ask user for quiz nane """
     while True:
         print("Please enter quiz name\n")
