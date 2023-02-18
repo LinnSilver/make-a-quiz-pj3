@@ -56,6 +56,15 @@ def create_quiz():
         answers = create_quiz_question_answers()
 
 
+def create_quiz_question_next():
+    quiz_question = input("\nAdd one more question? (Y/N default No): ")
+
+    if (quiz_question == "Y") or (quiz_question == "y"):
+        return True
+    else:
+        return False
+
+
 def create_quiz_question():
     """ Create_quiz_question """
     quiz_question = input("\nPlease enter quiz question: ")
