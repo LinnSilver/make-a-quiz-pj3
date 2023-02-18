@@ -19,6 +19,7 @@ def storage_get():
 
 
 def run_menu():
+    """ Make user choose if they like to create or play a quiz """
     answer = None
 
     while answer not in ("c", "p"):
@@ -57,6 +58,7 @@ def create_quiz():
 
 
 def create_quiz_question_next():
+    """ Ccreate_quiz_question_next """
     quiz_question = input("\nAdd one more question? (Y/N default No): ")
 
     if (quiz_question == "Y") or (quiz_question == "y"):
@@ -81,7 +83,14 @@ def create_quiz_question():
     return quiz_question
 
 
-def create_quiz_question_answers_next(): 
+def create_quiz_question_answers_next():
+    """ create quiz question answers next """
+    question_answers = input("\nAdd one more answer? (Y/N default No): ")
+
+    if (question_answers == "Y") or (question_answers == "y"):
+        return True
+    else:
+        return False
 
 
 def create_quiz_question_answers():
