@@ -81,23 +81,24 @@ def create_quiz_question():
     return quiz_question
 
 
+def create_quiz_question_answers_next(): 
+
+
 def create_quiz_question_answers():
     """ Ask user for answers """
-    number_of_answers = int(input("How many answers do you want to add?:"))
-    answer_list = []
-    #i = 0
-    
-    for i in range(number_of_answers):
-        data_answer = input("Please enter answer:\n")
-        answer_list.append(data_answer)
+    answers_list = []
+    answer_status = True
+    while answer_status == True:
+        question_answers = input("\nPlease enter answer: ")
+        question_answers = question_answers.strip()
 
-    while True:
-        corect_answer = input("Wath is corect answer:?\n")
-   
-        if corect_answer not in answer_list:
-            print("Please enter one of the ansers you provided.")
-       
-        return {"answer": answer_list, "corect_answer": corect_answer}
+        if len(question_answers) < 1:
+            print("Please enter a answer that is at least 1 characters long.")
+        else:
+            answers_list.append(question_answers)
+            answer_status = create_quiz_question_answers_next()
+
+    return answers_list
 
 
 if __name__ == '__main__':
