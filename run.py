@@ -33,6 +33,7 @@ def run_menu():
         else:
             print("Please enter c or p.")
 
+
 def create_quiz():
     """ Ask user for quiz name """
 
@@ -56,14 +57,19 @@ def create_quiz():
 
 
 def create_quiz_question():
-    """ Ask user for question """
-    while True:
-        print("Please enter question\n")
-        data_question = input("Question is:")
+    """ Create_quiz_question """
+    quiz_question = input("\nPlease enter quiz question: ")
 
-        question = data_question
+    quiz_question = quiz_question.strip()
 
-        return question
+    if len(quiz_question) < 3:
+        print("Please enter a question that is at least 3 characters long.")
+        create_quiz_question()
+        return 
+
+    print(quiz_question)
+
+    return quiz_question
 
 
 def create_quiz_question_answers():
