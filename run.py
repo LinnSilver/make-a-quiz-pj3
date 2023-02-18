@@ -19,13 +19,12 @@ def storage_get():
 
 
 def run_menu():
-    """ Make user choose if they like to create or play a quiz """
     answer = None
 
     while answer not in ("c", "p"):
-        print("c= Create a quiz?")
+        print("\nc= Create a quiz?")
         print("p= Play a quiz?")
-        answer = input("Please choose c or p:\n")
+        answer = input("\nPlease choose c or p: \n")
 
         if answer == "c":
             create_quiz()
@@ -40,12 +39,12 @@ def create_quiz():
 
     quiz_questions = []
 
-    quiz_name = input("Please enter quiz name: ")
+    quiz_name = input("\nPlease enter quiz name: ")
 
-    quiz_name.strip()
+    quiz_name = quiz_name.strip()
 
     if len(quiz_name) < 2:
-        print("Please enter a name that is at least 2 characters long.\n")
+        print("Please enter a name that is at least 2 characters long.")
         create_quiz()
 
     print(quiz_name)
@@ -55,6 +54,13 @@ def create_quiz():
 
         quiz_question_name = create_quiz_question()
         answers = create_quiz_question_answers()
+
+        correct_answer = create_quiz_question_answers_set_correct_answer(answers)
+
+
+        if (create_quiz_question_next() == False):
+                
+            data = quiz_questions
 
 
 def create_quiz_question_next():
@@ -108,6 +114,23 @@ def create_quiz_question_answers():
             answer_status = create_quiz_question_answers_next()
 
     return answers_list
+
+
+def create_quiz_question_answers_set_correct_answer(answer_list):
+    """ create_quiz_question"""
+
+    for value in answer_list:
+        print('Option: ' + value) 
+
+    corect_answer = input("\nAt last, enter corect answer: ")
+    corect_answer = corect_answer.strip()
+
+    for value in answer_list:
+        if (value == corect_answer):
+            return corect_answer
+
+    create_quiz_question_answers_set_correct_answer(answer_list)
+
 
 
 if __name__ == '__main__':
