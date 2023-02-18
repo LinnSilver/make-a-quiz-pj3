@@ -1,24 +1,35 @@
 import json
-global data
 
 
 def storage_get():
     """ Manage JSON file """
     # Opening JSON file
     storage_json = open('data.json', 'r')
+    global data
 
     # Load JSON data to memory
     try:
         data = json.load(storage_json)
-        if type(data) is not list:
-            data = []
+        if isinstance(data) is not list:
+            data = {}
         storage_json.close()
     except:
         print("Failed to read data from JSON")
-        data = []
+        data = {}
+
+
+def storage_save():
+    
+    # Serializing json
+    json_object = json.dumps(data)
+    
+    # Writing to data.json
+    with open("data.json", "w") as outfile:
+        outfile.write(json_object)
 
 
 def run_menu():
+    """  """
     answer = None
 
     while answer not in ("c", "p"):
@@ -36,8 +47,9 @@ def run_menu():
 
 def create_quiz():
     """ Ask user for quiz name """
+    global data
 
-    quiz_questions = []
+    quiz_questions = data
 
     quiz_name = input("\nPlease enter quiz name: ")
 
@@ -57,10 +69,15 @@ def create_quiz():
 
         correct_answer = create_quiz_question_answers_set_correct_answer(answers)
 
+        quiz_questions[quiz_name] = {quiz_question_name: {
+                                            "question": quiz_question_name, 
+                                            "answers": answers,
+                                            "correct_answer": correct_answer}}
+        if create_quiz_question_next() == False:
 
-        if (create_quiz_question_next() == False):
-                
             data = quiz_questions
+            storage_save()
+            return True
 
 
 def create_quiz_question_next():
@@ -132,8 +149,6 @@ def create_quiz_question_answers_set_correct_answer(answer_list):
     create_quiz_question_answers_set_correct_answer(answer_list)
 
 
-
 if __name__ == '__main__':
     storage_get()
     run_menu()
-
