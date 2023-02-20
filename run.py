@@ -26,13 +26,13 @@ def storage_save():
 
 
 def run_menu():
-    """  """
+    """ Asks the user to choose whether to create or play a quiz """
     answer = None
 
     while answer not in ("c", "p"):
         print("\nc= Create a quiz?")
         print("p= Play a quiz?")
-        answer = input("\nPlease choose c or p: \n")
+        answer = input("\nPlease choose c or p: \n").lower()
 
         if answer == "c":
             create_quiz()
