@@ -3,26 +3,21 @@ import json
 
 def storage_get():
     """ Manage JSON file """
-    # Opening JSON file
-    storage_json = open('data.json', 'r')
+
     global data
 
-    # Load JSON data to memory
-    try:
-        data = json.load(storage_json)
-        if isinstance(data) is not list:
+    with open('data.json') as json_file:
+        try:
+            data = json.load(json_file)
+        except ValueError:
             data = {}
-        storage_json.close()
-    except:
-        print("Failed to read data from JSON")
-        data = {}
 
 
 def storage_save():
-    
+    """ Save to json file """
     # Serializing json
     json_object = json.dumps(data)
-    
+
     # Writing to data.json
     with open("data.json", "w") as outfile:
         outfile.write(json_object)
