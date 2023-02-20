@@ -47,6 +47,8 @@ def create_quiz():
     global data
 
     quiz_questions = data
+    print("The type is : ", type(quiz_questions))
+    print("The data is : ", (quiz_questions))
 
     quiz_name = input("\nPlease enter quiz name: ")
 
@@ -57,22 +59,23 @@ def create_quiz():
         create_quiz()
 
     print(quiz_name)
-
+    
+    question_data = {}
     question_status = True
+
     while question_status == True:
 
-        quiz_question_name = create_quiz_question()
+        quiz_question = create_quiz_question()
         answers = create_quiz_question_answers()
-
         correct_answer = create_quiz_question_answers_set_correct_answer(answers)
 
-        quiz_questions[quiz_name] = {quiz_question_name: {
-                                            "question": quiz_question_name, 
-                                            "answers": answers,
-                                            "correct_answer": correct_answer}}
+        question_data[quiz_question] = {
+                                    "answers": answers,
+                                    "correct_answer": correct_answer}
         if create_quiz_question_next() == False:
 
-            data = quiz_questions
+            data[quiz_name] = question_data
+            
             storage_save()
             return True
 
