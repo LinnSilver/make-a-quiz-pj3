@@ -59,7 +59,7 @@ def create_quiz():
         create_quiz()
 
     print(quiz_name)
-    
+
     question_data = {}
     question_status = True
 
@@ -75,13 +75,13 @@ def create_quiz():
         if create_quiz_question_next() == False:
 
             data[quiz_name] = question_data
-            
+
             storage_save()
             return True
 
 
 def create_quiz_question_next():
-    """ Ccreate_quiz_question_next """
+    """ Asking the user if they want to create another question """
     quiz_question = input("\nAdd one more question? (Y/N default No): ")
 
     if (quiz_question == "Y") or (quiz_question == "y"):
@@ -91,7 +91,7 @@ def create_quiz_question_next():
 
 
 def create_quiz_question():
-    """ Create_quiz_question """
+    """ Creates a quiz question """
     quiz_question = input("\nPlease enter quiz question: ")
 
     quiz_question = quiz_question.strip()
@@ -117,7 +117,7 @@ def create_quiz_question_answers_next():
 
 
 def create_quiz_question_answers():
-    """ Ask user for answers """
+    """ Asks the user for an answer to the question """
     answers_list = []
     answer_status = True
     while answer_status == True:
@@ -134,8 +134,7 @@ def create_quiz_question_answers():
 
 
 def create_quiz_question_answers_set_correct_answer(answer_list):
-    """ create_quiz_question"""
-
+    """ Asks the user which answer is correct"""
     for value in answer_list:
         print('Option: ' + value) 
 
