@@ -15,8 +15,10 @@ def storage_get():
 
 def storage_save():
     """ Save to json file """
+    global data
+
     # Serializing json
-    json_object = json.dumps(data)
+    json_object = json.dumps(data, sort_keys=True, indent=4)
 
     # Writing to data.json
     with open("data.json", "w") as outfile:
