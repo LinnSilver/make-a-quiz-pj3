@@ -13,21 +13,39 @@ def storage_get():
             data = {}
 
 
+def run_menu():
+    """ Asks the user to choose whether to create or play a quiz """
+    answer = None
+
+    while answer not in ("c", "p"):
+        print("\nc= Create a quiz?")
+        print("p= Play a quiz?")
+        answer = input("\nPlease choose c or p: \n").lower().strip()
+
+        if answer == "c":
+            create_quiz()
+        elif answer == "p":
+            choose_quize_to_play()
+        else:
+            print("Please enter c or p.")
+
+
 def choose_quize_to_play():
-    """ list quiz names to user to choose which to play
-        print with number in front """
+    """ Prints quiz names to choose from.
+        Asks user to choose which quiz to play.
+    """
 
     dict = (data)
     keys_list = [key for key in dict]
 
-    print("\n[Choose quiz to play]")
+    print("\nChoose which quiz to play.")
     for key, value in dict.items():
         print(key)
 
     quiz_name = None
     while quiz_name not in (keys_list):
 
-        quiz_name = input("\nPlease choose quiz to play: ")
+        quiz_name = input("\nPlease choose quiz to play: ").strip()
 
         for key, value in dict.items():
             if quiz_name == key:
@@ -36,10 +54,13 @@ def choose_quize_to_play():
 
 
 def play_quiz(quiz_name, quiz_data):
+    """ play quiz
+        keeps score 
+    """
     score = 0
 
     for question, question_data in quiz_data.items():
-        print('Question: ', question)
+        print('\nQuestion: ', question)
 
         print("\nWhich answer is correct?\n")
 
@@ -51,7 +72,7 @@ def play_quiz(quiz_name, quiz_data):
         if quiz_guess == question_data['correct_answer']:
             score = score + 1
 
-    print("Your score is: ", score)
+    print("\nYour score is: ", score)
 
 
 def storage_save():
@@ -66,30 +87,13 @@ def storage_save():
         outfile.write(json_object)
 
 
-def run_menu():
-    """ Asks the user to choose whether to create or play a quiz """
-    answer = None
-
-    while answer not in ("c", "p"):
-        print("\nc= Create a quiz?")
-        print("p= Play a quiz?")
-        answer = input("\nPlease choose c or p: \n").lower()
-
-        if answer == "c":
-            create_quiz()
-        elif answer == "p":
-            choose_quize_to_play()
-        else:
-            print("Please enter c or p.")
-
-
 def create_quiz():
     """ Ask user for quiz name """
     global data
 
-    quiz_questions = data
-    print("The type is : ", type(quiz_questions))
-    print("The data is : ", (quiz_questions))
+    # quiz_questions = data
+    # print("The type is : ", type(quiz_questions))
+    # print("The data is : ", (quiz_questions))
 
     quiz_name = input("\nPlease enter quiz name: ")
 
@@ -112,7 +116,8 @@ def create_quiz():
 
         question_data[quiz_question] = {
                                     "answers": answers,
-                                    "correct_answer": correct_answer}
+                                    "correct_answer": correct_answer
+                                    }
         if create_quiz_question_next() == False:
 
             data[quiz_name] = question_data
@@ -140,7 +145,7 @@ def create_quiz_question():
     if len(quiz_question) < 3:
         print("Please enter a question that is at least 3 characters long.")
         create_quiz_question()
-        return 
+        return
 
     print(quiz_question)
 
@@ -175,18 +180,18 @@ def create_quiz_question_answers():
 
 
 def create_quiz_question_answers_set_correct_answer(answer_list):
-    """ Asks the user which answer is correct"""
+    """ Asks the user which answer is correct."""
     for value in answer_list:
-        print('Option: ' + value) 
+        print('Your answers: ' + value)
 
-    corect_answer = input("\nAt last, enter corect answer: ")
-    corect_answer = corect_answer.strip()
+    correct_answer = input("\nAt last, enter correct answer: ")
+    correct_answer = correct_answer.strip()
 
     for value in answer_list:
-        if (value == corect_answer):
-            return corect_answer
+        if value == correct_answer:
+            return correct_answer
 
-    create_quiz_question_answers_set_correct_answer(answer_list)
+    return create_quiz_question_answers_set_correct_answer(answer_list)
 
 
 if __name__ == '__main__':
