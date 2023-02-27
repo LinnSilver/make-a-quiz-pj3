@@ -13,6 +13,31 @@ def storage_get():
             data = {}
 
 
+def choose_quize_to_play():
+    """ list quiz names to user to choose which to play 
+        print with number in front """
+
+    dict = (data)
+    keysList = [key for key in dict]
+
+    print("\n[Choose quiz to play]")
+    for key, value in dict.items():
+        print(key)
+
+    quiz_name = None
+    while quiz_name not in (keysList):
+
+        quiz_name = input("\nPlease choose quiz to play: ")
+
+        for key, value in dict.items():
+            if quiz_name == key:
+                play_quiz(quiz_name, value)
+                return quiz_name
+
+
+def play_quiz():
+
+
 def storage_save():
     """ Save to json file """
     global data
