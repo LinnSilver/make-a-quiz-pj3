@@ -14,18 +14,18 @@ def storage_get():
 
 
 def choose_quize_to_play():
-    """ list quiz names to user to choose which to play 
+    """ list quiz names to user to choose which to play
         print with number in front """
 
     dict = (data)
-    keysList = [key for key in dict]
+    keys_list = [key for key in dict]
 
     print("\n[Choose quiz to play]")
     for key, value in dict.items():
         print(key)
 
     quiz_name = None
-    while quiz_name not in (keysList):
+    while quiz_name not in (keys_list):
 
         quiz_name = input("\nPlease choose quiz to play: ")
 
@@ -35,7 +35,23 @@ def choose_quize_to_play():
                 return quiz_name
 
 
-def play_quiz():
+def play_quiz(quiz_name, quiz_data):
+    score = 0
+
+    for question, question_data in quiz_data.items():
+        print('Question: ', question)
+
+        print("\nWhich answer is correct?\n")
+
+        for answers in question_data['answers']:
+            print(answers)
+
+        quiz_guess = input("\nWrite your answer: ")
+
+        if quiz_guess == question_data['correct_answer']:
+            score = score + 1
+
+    print("Your score is: ", score)
 
 
 def storage_save():
@@ -62,7 +78,7 @@ def run_menu():
         if answer == "c":
             create_quiz()
         elif answer == "p":
-            print("Play a quiz")
+            choose_quize_to_play()
         else:
             print("Please enter c or p.")
 
