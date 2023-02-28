@@ -2,8 +2,9 @@ import json
 
 
 def storage_get():
-    """ Manage JSON file """
-
+    """
+    Get data from JSON file
+    """
     global data
 
     with open('data.json') as json_file:
@@ -14,7 +15,10 @@ def storage_get():
 
 
 def run_menu():
-    """ Asks the user to choose whether to create or play a quiz """
+    """
+    Asks the user to choose whether to create or play a quiz
+    Validates input. Repeats until correct answer
+    """
     answer = None
 
     while answer not in ("c", "p"):
@@ -31,10 +35,11 @@ def run_menu():
 
 
 def choose_quize_to_play():
-    """ Prints quiz names to choose from.
-        Asks user to choose which quiz to play.
     """
-
+    Prints quiz names to choose from.
+    Asks user to choose which quiz to play.
+    Validates input. Repeats until correct answer
+    """
     dict = (data)
     keys_list = [key for key in dict]
 
@@ -55,8 +60,12 @@ def choose_quize_to_play():
 
 
 def play_quiz(quiz_name, quiz_data):
-    """ play quiz
-        keeps score
+    """
+    Print's question
+    Print answers to choose from
+    Validates input. Compare answers with the correct answer
+    Keeps score
+    When the quiz is over, prints the user score
     """
     score = 0
 
@@ -77,24 +86,25 @@ def play_quiz(quiz_name, quiz_data):
 
 
 def storage_save():
-    """ Save to json file """
+    """
+    Save to json file
+    """
     global data
 
-    # Serializing json
     json_object = json.dumps(data, sort_keys=True, indent=4)
 
-    # Writing to data.json
     with open("data.json", "w") as outfile:
         outfile.write(json_object)
 
 
 def create_quiz():
-    """ Ask user for quiz name """
+    """
+    Ask user for quiz name
+    Validates input. Repeats until correct answer
+    Collects quiz components
+    Returns quiz data
+    """
     global data
-
-    # quiz_questions = data
-    # print("The type is : ", type(quiz_questions))
-    # print("The data is : ", (quiz_questions))
 
     quiz_name = input("\nPlease enter quiz name: ")
 
@@ -128,7 +138,10 @@ def create_quiz():
 
 
 def create_quiz_question_next():
-    """ Asking the user if they want to create another question """
+    """
+    Asking the user if they want to create another question
+    Validates input
+    """
     quiz_question = input("\nAdd one more question? (Y/N default No): ")
 
     if (quiz_question == "Y") or (quiz_question == "y"):
@@ -138,7 +151,10 @@ def create_quiz_question_next():
 
 
 def create_quiz_question():
-    """ Creates a quiz question """
+    """
+    Asking the user for quiz question
+    Validates input. Repeats until correct question
+    """
     quiz_question = input("\nPlease enter quiz question: ")
 
     quiz_question = quiz_question.strip()
@@ -154,7 +170,10 @@ def create_quiz_question():
 
 
 def create_quiz_question_answers_next():
-    """ create quiz question answers next """
+    """
+    Asks the user if they want to create another answer
+    Validates input
+    """
     question_answers = input("\nAdd one more answer? (Y/N default No): ")
 
     if (question_answers == "Y") or (question_answers == "y"):
@@ -164,7 +183,11 @@ def create_quiz_question_answers_next():
 
 
 def create_quiz_question_answers():
-    """ Asks the user for an answer to the question """
+    """
+    Asks the user to enter an answer to the question
+    Validates input
+    Returns list of answers
+    """
     answers_list = []
     answer_status = True
     while answer_status:
@@ -181,7 +204,11 @@ def create_quiz_question_answers():
 
 
 def create_quiz_question_answers_correct_answer(answer_list):
-    """ Asks the user which answer is correct."""
+    """
+    Asks the user to enter correct answer
+    Validates that the correct answer is included in the list of answers
+    Repeated until the correct answer matches an answer in answers
+    """
     for value in answer_list:
         print('Your answers: ' + value)
 
