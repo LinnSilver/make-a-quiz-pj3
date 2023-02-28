@@ -38,7 +38,8 @@ def choose_quize_to_play():
     dict = (data)
     keys_list = [key for key in dict]
 
-    print("\nChoose which quiz to play.")
+    print("\nChoose which quiz to play."
+          " You can copy and paste questions and answers, if you like.")
     for key, value in dict.items():
         print(key)
 
@@ -55,7 +56,7 @@ def choose_quize_to_play():
 
 def play_quiz(quiz_name, quiz_data):
     """ play quiz
-        keeps score 
+        keeps score
     """
     score = 0
 
@@ -108,17 +109,17 @@ def create_quiz():
     question_data = {}
     question_status = True
 
-    while question_status == True:
+    while question_status:
 
         quiz_question = create_quiz_question()
         answers = create_quiz_question_answers()
-        correct_answer = create_quiz_question_answers_set_correct_answer(answers)
+        correct_answer = create_quiz_question_answers_correct_answer(answers)
 
         question_data[quiz_question] = {
                                     "answers": answers,
                                     "correct_answer": correct_answer
                                     }
-        if create_quiz_question_next() == False:
+        if not create_quiz_question_next():
 
             data[quiz_name] = question_data
 
@@ -166,12 +167,12 @@ def create_quiz_question_answers():
     """ Asks the user for an answer to the question """
     answers_list = []
     answer_status = True
-    while answer_status == True:
+    while answer_status:
         question_answers = input("\nPlease enter answer: ")
         question_answers = question_answers.strip()
 
         if len(question_answers) < 1:
-            print("Please enter a answer that is at least 1 characters long.")
+            print("Please enter an answer that is at least 1 character long.")
         else:
             answers_list.append(question_answers)
             answer_status = create_quiz_question_answers_next()
@@ -179,7 +180,7 @@ def create_quiz_question_answers():
     return answers_list
 
 
-def create_quiz_question_answers_set_correct_answer(answer_list):
+def create_quiz_question_answers_correct_answer(answer_list):
     """ Asks the user which answer is correct."""
     for value in answer_list:
         print('Your answers: ' + value)
@@ -191,7 +192,7 @@ def create_quiz_question_answers_set_correct_answer(answer_list):
         if value == correct_answer:
             return correct_answer
 
-    return create_quiz_question_answers_set_correct_answer(answer_list)
+    return create_quiz_question_answers_correct_answer(answer_list)
 
 
 if __name__ == '__main__':
