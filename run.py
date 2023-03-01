@@ -22,9 +22,11 @@ def run_menu():
     answer = None
 
     while answer not in ("c", "p"):
-        print("\nc= Create a quiz?")
-        print("p= Play a quiz?")
-        answer = input("\nPlease choose c or p: \n").lower().strip()
+        print("Welcome to your best quiz!")
+        print(" Want to create or play a quiz?")
+        print("\nC = Create a quiz?")
+        print("P = Play a quiz?")
+        answer = input("\nPlease choose c or p: ").lower().strip()
 
         if answer == "c":
             create_quiz()
@@ -83,6 +85,7 @@ def play_quiz(quiz_name, quiz_data):
             score = score + 1
 
     print("\nYour score is: ", score)
+    print("Thank you for playing!")
 
 
 def storage_save():
