@@ -47,6 +47,7 @@ def choose_quize_to_play():
 
     print("\nChoose which quiz to play."
           "\nYou can copy and paste questions and answers, if you like.")
+    
     for key, value in dict.items():
         print(key)
 
@@ -90,7 +91,7 @@ def play_quiz(quiz_name, quiz_data):
 
 def storage_save():
     """
-    Save to json file
+    Serializing json and Writing to data.json
     """
     global data
 
