@@ -22,8 +22,8 @@ def run_menu():
     answer = None
 
     while answer not in ("c", "p"):
-        print("Welcome to your best quiz!")
-        print("Want to create or play a quiz?")
+        print("\nWelcome to your best quiz!")
+        print("\nDo you Want to create or play a quiz??")
         print("\nC = Create a quiz?")
         print("P = Play a quiz?")
         answer = input("\nPlease choose c or p: ").lower().strip()
@@ -46,7 +46,7 @@ def choose_quize_to_play():
     keys_list = [key for key in dict]
 
     print("\nChoose which quiz to play."
-          "\nYou can copy and paste questions and answers, if you like.")
+          "\nYou can copy and paste questions and answers, if you like.\n")
     
     for key, value in dict.items():
         print(key)
@@ -86,7 +86,7 @@ def play_quiz(quiz_name, quiz_data):
             score = score + 1
 
     print("\nYour score is: ", score)
-    print("Thank you for playing!")
+    print("\nThank you for playing!")
 
 
 def storage_save():
