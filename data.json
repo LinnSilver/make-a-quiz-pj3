@@ -1,34 +1,45 @@
 {
-    "Simple quiz": {
-        "1+1": {
+    "Random quiz": {
+        "How long does it take for light to travel from Earth to Mars?": {
             "answers": [
-                "3",
-                "2",
-                "4"
+                "5 minutes",
+                "Between 3 and 22 minutes",
+                "18 minutes"
             ],
-            "correct_answer": "2"
+            "correct_answer": "Between 3 and 22 minutes"
         },
-        "2+2": {
+        "When you use the correct position for your hands on the keyboard, which statement is true?": {
             "answers": [
-                "3",
-                "4",
-                "5"
+                "The average person's left hand does 56% of the typing ",
+                "Both hands are used equally",
+                "The average person's right hand does 56% of the typing "
             ],
-            "correct_answer": "4"
+            "correct_answer": "The average person's left hand does 56% of the typing"
         },
-        "3+3": {
+        "How many muscles does a cat have in each ear?": {
             "answers": [
-                "6",
-                "5"
+                "25",
+                "45",
+                "56",
+                "32"
             ],
-            "correct_answer": "6"
+            "correct_answer": "32"
         },
-        "4+4": {
+        "When did Gmail come out?": {
             "answers": [
-                "6",
-                "8"
+                "October 29, 2006",
+                "April 1, 2004",
+                "May 17, 2003"
             ],
-            "correct_answer": "8"
+            "correct_answer": "April 1, 2004"
+        },
+        "What is the meaning of life?": {
+            "answers": [
+                "A life task. A project or an aspiration, a goal you set yourself.",
+                "There is no specific meaning to life",
+                "42"
+            ],
+            "correct_answer": "42"
         }
     }
 }
