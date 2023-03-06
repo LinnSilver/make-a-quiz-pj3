@@ -84,6 +84,7 @@ def play_quiz(quiz_name, quiz_data):
 
         if quiz_guess == question_data['correct_answer']:
             score = score + 1
+            print("You were right!")
 
     print("\nYour score is: ", score)
     print("\nThank you for playing!")

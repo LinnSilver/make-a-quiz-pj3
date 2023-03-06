@@ -1,5 +1,5 @@
 # Create or play quiz
-#### [View the live project here](https://create-your-quiz.herokuapp.com/)
+#### [View the live project here](https://your-best-quiz.herokuapp.com/)
 
 With this command-line application you can create your own quiz and let others play it. Challenge your friends and see who gets the best score on the questions you create. Or challenge yourself by playing a quiz created by a friend or stranger.
 
@@ -125,13 +125,20 @@ After every change in the code, it's important to redo the test section. Go thro
 - Manual testing
 
  **How to set up Heroku** 
-1.  Log in on Heroku.
+1.   Log in on Heroku.
 2.  Click: Show next steps.
 3.  Click: Create new app.
 4.  Fill in App name and choose a region. Click: Create app.
-5.  Under **Deploy,** choose Deployment method GitHub.
-6.  **Search for a repository to connect to,**  choose repo name.
-7.  Manual deploy click Deploy Branch.
+
+6. Under **Settings,** choose Deployment method GitHub.
+7. Click: Add Buildpack
+8. Choose heroku/python. Click: Save
+9. Click: Add Buildpack
+10. Choose heroku/nodejs. Click: Save
+
+11.  Under **Deploy,** choose Deployment method GitHub.
+12.  **Search for a repository to connect to,**  choose repo name LinnSilver/make-a-quiz-pj3.
+13.  Click: Deploy Branch.
 
 ## Credits
 ### Content
