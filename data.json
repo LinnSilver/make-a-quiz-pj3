@@ -8,14 +8,6 @@
             ],
             "correct_answer": "Between 3 and 22 minutes"
         },
-        "When you use the correct position for your hands on the keyboard, which statement is true?": {
-            "answers": [
-                "The average person's left hand does 56% of the typing ",
-                "Both hands are used equally",
-                "The average person's right hand does 56% of the typing "
-            ],
-            "correct_answer": "The average person's left hand does 56% of the typing"
-        },
         "How many muscles does a cat have in each ear?": {
             "answers": [
                 "25",
@@ -25,6 +17,14 @@
             ],
             "correct_answer": "32"
         },
+        "What is the meaning of life?": {
+            "answers": [
+                "A life task. A project or an aspiration, a goal you set yourself.",
+                "There is no specific meaning to life",
+                "42"
+            ],
+            "correct_answer": "42"
+        },
         "When did Gmail come out?": {
             "answers": [
                 "October 29, 2006",
@@ -33,13 +33,38 @@
             ],
             "correct_answer": "April 1, 2004"
         },
-        "What is the meaning of life?": {
+        "When you use the correct position for your hands on the keyboard, which statement is true?": {
             "answers": [
-                "A life task. A project or an aspiration, a goal you set yourself.",
-                "There is no specific meaning to life",
-                "42"
+                "The average person's left hand does 56% of the typing ",
+                "Both hands are used equally",
+                "The average person's right hand does 56% of the typing "
             ],
-            "correct_answer": "42"
+            "correct_answer": "The average person's left hand does 56% of the typing"
+        }
+    },
+    "test2": {
+        "5+5": {
+            "answers": [
+                "10"
+            ],
+            "correct_answer": "10"
+        }
+    },
+    "test3": {
+        "3+3": {
+            "answers": [
+                "5",
+                "6"
+            ],
+            "correct_answer": "6"
+        },
+        "7+7": {
+            "answers": [
+                "13",
+                "15",
+                "16"
+            ],
+            "correct_answer": "15"
         }
     }
 }

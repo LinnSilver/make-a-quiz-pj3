@@ -46,8 +46,8 @@ def choose_quize_to_play():
     keys_list = [key for key in dict]
 
     print("\nChoose which quiz to play."
-          "\nYou can copy and paste questions and answers, if you like.\n")
-    
+          "\nYou can copy and paste questions and answers with the mouse.\n")
+
     for key, value in dict.items():
         print(key)
 
@@ -147,12 +147,12 @@ def create_quiz_question_next():
     Asking the user if they want to create another question
     Validates input
     """
-    quiz_question = input("\nAdd one more question? (Y/N default No): ")
+    quiz_question = input("\nAdd one more question? (Y/N default Yes): ")
 
-    if (quiz_question == "Y") or (quiz_question == "y"):
-        return True
-    else:
+    if (quiz_question == "N") or (quiz_question == "n"):
         return False
+    else:
+        return True
 
 
 def create_quiz_question():
@@ -179,12 +179,12 @@ def create_quiz_question_answers_next():
     Asks the user if they want to create another answer
     Validates input
     """
-    question_answers = input("\nAdd one more answer? (Y/N default No): ")
+    question_answers = input("\nAdd one more answer? (Y/N default Yes): ")
 
-    if (question_answers == "Y") or (question_answers == "y"):
-        return True
-    else:
+    if (question_answers == "N") or (question_answers == "n"):
         return False
+    else:
+        return True
 
 
 def create_quiz_question_answers():
