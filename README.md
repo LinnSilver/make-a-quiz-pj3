@@ -15,7 +15,7 @@ It is fine to answer with both uppercase and lowercase letters. If the user acci
 
 ### Create a quiz
 When the user chooses to create a quiz, the app will ask the user to write the first question. After that, it asks the user to write a response. For each answer the user writes, it will ask if the user wants to add another answer. When the user chooses not to add more answers, it will ask which of the answers was correct, and then ask if the user wants to add another question.
-When the user no longer wants to add more questions, it will save the quiz to the json file.
+When the user no longer wants to add more questions, it will save the quiz to the json file. When the user plays in Python Terminal in herokuapp, the quiz will be saved temporarily.
 
 If the user chooses a too short name for his quiz or an abbreviated question/answer, he will be asked again to make another attempt with a specified minimum number of letters.
 If the user accidentally fills in blanks, either before or after or only, these will be ignored. In the case of an insufficient answer, the user will be asked to try again.
@@ -37,12 +37,13 @@ After the user has answered a question, the app will print the next question and
 - GitHub
 - GitHub Pages
 - Gitpod
+- Heroku
 
 ## Testing
  CI Python Linter
 ## ![CI Python Linter](assets/images/cl-python-linter.jpg)
 
-### **Manual testing**
+### Manual testing
 |Command input     |Expected command response                |Results              |
 |----------------|-------------------------------|-----------------------------|
 |**Lode command-line application**                |Please choose c or p:         |Pass |
@@ -57,6 +58,7 @@ After the user has answered a question, the app will print the next question and
 |- Enter blanks |Please enter a name that is at least 2 characters long.         |Pass |
 |- Enter 1 character and blanks   |Please enter a name that is at least 2 characters long. |Pass |
 |- Enter blanks and 1 character  |Please enter a name that is at least 2 characters long. |Pass |
+|- Enter  a quiz name that is already in storage    |Overwrites the existing quiz   |Pass |
 |           |     | |
 |**Please enter quiz question:** |          | |
 |- Enter blanks |Please enter a question that is at least 3 characters long.      |Pass |
@@ -68,17 +70,18 @@ After the user has answered a question, the app will print the next question and
 |- Enter blanks |Please enter an answer that is at least 1 character long.      |Pass |
 |- Enter  a valid answer|Add one more answer?|Pass |
 |           |     | |
-|**Add one more answer? (Y/N default No):** |          | |
-|- Enter blanks |Yes: Add one more answer? (Y/N default No):    |Pass |
-|- Enter anything else or nothing |Prints out the previously written answers and , At last, enter correct answer:|Pass |
+|**Add one more answer? (Y/N default Yes):** |          | |
+|- Enter blanks |Yes: Add one more answer? (Y/N default Yes):    |Pass |
+|- Enter Y, y, anything else or nothing |Prints: Please enter answer: |Pass |
+|- Enter n else N |Prints out the previously written answers and , At last, enter correct answer:|Pass |
 |           |     | |
 |**At last, enter correct answer:**|          | |
 |- Enter blanks or something not in previously answered list |At last, enter correct answer:   |Pass |
 |- Enter correct answer or correct answer and blanks|Add one more question? (Y/N default No):|Pass|
 |           |     | |
-|**Add one more question? (Y/N default No):**|          | |
-|- y or Y |Please enter quiz question:  |Pass |
-|- Enter anything else or nothing| Quits game and saves quiz game to json file.|Pass|
+|**Add one more question? (Y/N default Yes):**|          | |
+|- Enter y, Y, anything else or nothing |Please enter quiz question:  |Pass |
+|- Enter n or N | Quits game and saves quiz game to json file.|Pass|
 |           |     | |
 |**Please choose quiz to play: p** |          | |
 |- Enter p or P |Prints out all quizzes to choose from.     |Pass |
