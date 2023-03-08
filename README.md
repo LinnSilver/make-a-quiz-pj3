@@ -31,6 +31,10 @@ Once the user has selected which quiz they want to play, the app will print the 
 After the user has answered a question, the app will print the next question and answer options in the terminal until the quiz is complete. Finally, it will print how many score the user achieved.
 ## ![Play a quiz](assets/images/play-quiz.jpg)
 
+## Flowchart
+Project planing flowchart.
+## ![Flowchart](assets/images/Flowchart.jpg)
+
 ## Technologies
 - Python
 - JSON

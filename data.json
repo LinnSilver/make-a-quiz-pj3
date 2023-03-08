@@ -41,13 +41,5 @@
             ],
             "correct_answer": "The average person's left hand does 56% of the typing"
         }
-    },
-    "test3": {
-        "1+1": {
-            "answers": [
-                "2"
-            ],
-            "correct_answer": "2"
-        }
     }
 }
