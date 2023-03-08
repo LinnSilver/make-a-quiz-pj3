@@ -217,7 +217,9 @@ def create_quiz_question_answers_correct_answer(answer_list):
     for value in answer_list:
         print('Your answers: ' + value)
 
-    correct_answer = input("\nAt last, enter correct answer: ")
+    correct_answer = input("\nAt last, enter correct answer: "
+                           "\nYou can copy and paste the correct answer"
+                           " with the mouse.\n")
     correct_answer = correct_answer.strip()
 
     for value in answer_list:
