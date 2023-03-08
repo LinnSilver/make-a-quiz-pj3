@@ -150,6 +150,7 @@ def create_quiz_question_next():
     quiz_question = input("\nAdd one more question? (Y/N default Yes): ")
 
     if (quiz_question == "N") or (quiz_question == "n"):
+        print("\nGreat job creating a quiz!\n")
         return False
     else:
         return True

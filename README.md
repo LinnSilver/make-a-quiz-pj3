@@ -97,8 +97,10 @@ After the user has answered a question, the app will print the next question and
 
 ## Deployment
  **How you set up GitHub** 
+
 Create a [fork of the repository.](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
-**1. Log in to GitHub and go to repository: [LinnSilver/make-a-quiz-pj3](https://github.com/LinnSilver/make-a-quiz-pj3)**
+
+1. Log in to GitHub and go to repository: [LinnSilver/make-a-quiz-pj3](https://github.com/LinnSilver/make-a-quiz-pj3)
 2. Click button fork -Create a new fork.
 3. Choose repository name.
 4. Click Create fork.
