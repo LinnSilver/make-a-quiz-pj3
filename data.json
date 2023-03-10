@@ -41,5 +41,47 @@
             ],
             "correct_answer": "The average person's left hand does 56% of the typing"
         }
+    },
+    "Sweden quiz": {
+        "How long does it take to drive across Sweden?": {
+            "answers": [
+                "24 hours",
+                "18 hours",
+                "14 hours",
+                "30 hours"
+            ],
+            "correct_answer": "24 hours"
+        },
+        "What does an average moose weigh?": {
+            "answers": [
+                "300 kg",
+                "500 kg",
+                "800 kg"
+            ],
+            "correct_answer": "300 kg"
+        },
+        "What does the Swede think is most important?": {
+            "answers": [
+                "Coffee at the meeting",
+                "Wine with dinner?"
+            ],
+            "correct_answer": "Coffee at the meeting"
+        },
+        "When you ride an escalator in Sweden, which side should you stand on?": {
+            "answers": [
+                "Stand left, go right",
+                "Stand right, go left"
+            ],
+            "correct_answer": "Stand right, go left"
+        },
+        "Which artist is not from Sweden?": {
+            "answers": [
+                "A-ha",
+                "Roxette",
+                "Robyn",
+                "Zara Larsson"
+            ],
+            "correct_answer": "A-ha"
+        }
     }
 }

@@ -1,7 +1,8 @@
 # Create or play quiz
-#### [View the live project here](https://your-best-quiz.herokuapp.com/)
 
 With this command-line application you can create your own quiz and let others play it. Challenge your friends and see who gets the best score on the questions you create. Or challenge yourself by playing a quiz created by a friend or stranger.
+#### [View the live project here](https://your-best-quiz.herokuapp.com/)
+## ![Quiz](assets/images/quiz.jpg)
 
 ## UX User experience
 The user himself chooses how many questions he wants to create and how many answer options there should be for each question. It is also possible to choose different numbers of answers to different questions. To make it easier for the user, for each question and answer they fill in, they are asked if they want to create one more question/answer, instead of having to decide in advance how many questions and answers they want to create.

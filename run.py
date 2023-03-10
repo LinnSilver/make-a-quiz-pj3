@@ -22,7 +22,7 @@ def run_menu():
     answer = None
 
     while answer not in ("c", "p"):
-        print("\nWelcome to your best quiz!")
+        print("\nWelcome to Your best quiz!")
         print("\nDo you Want to create or play a quiz??")
         print("\nC = Create a quiz?")
         print("P = Play a quiz?")
